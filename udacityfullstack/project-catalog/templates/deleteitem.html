@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+        <h3 class="text-muted">Delete Item</h3>
+        <p>Are you sure you want to delete {{item.name}}</p>
+        <form action="{{url_for('deleteitem',item=item.name)}}" method="POST">
+            <input type="submit" class="btn btn-danger" value="Yes, Delete!">
+        </form>
+        <a class="btn btn-warning mt-3" href="{{url_for('index')}}" role="button">Cancel</a>
+{% endblock %}

@@ -1,0 +1,16 @@
+.login{
+    margin-left: 65px;
+}
+#appname{
+    margin-right: 65px;
+}
+.navigation a{
+    text-decoration: none;
+}
+.container a{
+    text-decoration: none;
+}
+
+.col-md-6{
+    outline: 1px solid blue;
+}

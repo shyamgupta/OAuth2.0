@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+        <h3 class="text-muted">{{category.name}} ({{itemcount}} items)</h3>
+        {% for item in items %}
+        <a href="{{url_for('iteminfo',category=category.name,item=item.name)}}" class="text-danger">{{item.name}}</a>
+        <br>
+        {% endfor %}
+        <br>
+        <a class="btn btn-primary" href="{{url_for('createItem')}}" role="button">Add item</a>
+{% endblock %}

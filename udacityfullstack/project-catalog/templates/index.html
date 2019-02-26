@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+        
+        {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                        {% for message in messages %}
+                        <p class="bg-success text-white p-2">{{message}}</p>
+                        {% endfor %}
+                {% endif %}
+        {% endwith %}
+        <h3 class="text-muted">Latest Items</h3>
+        {% for item in items %}
+        <a href="{{url_for('iteminfo',category=item.category.name,item=item.name)}}" class="text-danger">{{item.name}}</a>
+        <span class="text-muted font-italic"><p class="d-inline">({{item.category.name}})</p></span>
+        <br>
+
+        {% endfor %}
+        <br>
+        <a class="btn btn-primary mb-2" href="{{url_for('createItem')}}" role="button">Add item</a>
+        <br>
+        <a href="{{url_for('catalogJSON')}}">Click here for JSON endpoint</a>
+{% endblock %}
